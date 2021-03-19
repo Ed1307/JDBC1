@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="homeworkdb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="homeworkdb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="cars"/>
+    <schema id="4" parent="1" name="carsshop"/>
+    <schema id="5" parent="1" name="hragency"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="mydb"/>
+    <schema id="8" parent="1" name="myjoinsdb"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="shopdb"/>
+    <schema id="12" parent="1" name="sklad"/>
+    <schema id="13" parent="1" name="sys"/>
+    <schema id="14" parent="1" name="testbase"/>
+    <schema id="15" parent="1" name="myfunkdb"/>
+    <schema id="16" parent="1" name="myjoinsdb2"/>
+    <table id="17" parent="2" name="homeworktable"/>
+    <table id="18" parent="2" name="marriedandbirthandadress"/>
+    <table id="19" parent="2" name="nameandphone"/>
+    <table id="20" parent="2" name="paymentandposition"/>
+    <column id="21" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="23" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="25" parent="18" name="married">
+      <Position>2</Position>
+      <DataType>tinyint|0</DataType>
+    </column>
+    <column id="26" parent="18" name="birth">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="27" parent="18" name="adress">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <index id="28" parent="18" name="id">
+      <ColNames>id</ColNames>
+    </index>
+    <foreign-key id="29" parent="18" name="marriedandbirthandadress_ibfk_1">
+      <ColNames>id</ColNames>
+      <RefSchemaName>homeworkdb</RefSchemaName>
+      <RefTableName>nameandphone</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="30" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="19" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="32" parent="19" name="phone">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <key id="33" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="35" parent="20" name="payment">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="36" parent="20" name="position">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <index id="37" parent="20" name="id">
+      <ColNames>id</ColNames>
+    </index>
+    <foreign-key id="38" parent="20" name="paymentandposition_ibfk_1">
+      <ColNames>id</ColNames>
+      <RefSchemaName>homeworkdb</RefSchemaName>
+      <RefTableName>nameandphone</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

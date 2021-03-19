@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MyJoinsDB@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="myjoinsdb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="cars"/>
+    <schema id="4" parent="1" name="carsshop"/>
+    <schema id="5" parent="1" name="homeworkdb"/>
+    <schema id="6" parent="1" name="hragency"/>
+    <schema id="7" parent="1" name="information_schema"/>
+    <schema id="8" parent="1" name="mydb"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="shopdb"/>
+    <schema id="12" parent="1" name="sklad"/>
+    <schema id="13" parent="1" name="sys"/>
+    <schema id="14" parent="1" name="testbase"/>
+    <table id="15" parent="2" name="marriedandbirthandadress"/>
+    <table id="16" parent="2" name="nameandphone"/>
+    <table id="17" parent="2" name="paymentandposition"/>
+    <column id="18" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="19" parent="15" name="married">
+      <Position>2</Position>
+      <DataType>tinyint|0</DataType>
+    </column>
+    <column id="20" parent="15" name="birth">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="21" parent="15" name="adress">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <index id="22" parent="15" name="id">
+      <ColNames>id</ColNames>
+    </index>
+    <foreign-key id="23" parent="15" name="marriedandbirthandadress_ibfk_1">
+      <ColNames>id</ColNames>
+      <RefSchemaName>myjoinsdb</RefSchemaName>
+      <RefTableName>nameandphone</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="24" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="16" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="26" parent="16" name="phone">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <key id="27" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="29" parent="17" name="payment">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="30" parent="17" name="position">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <index id="31" parent="17" name="id">
+      <ColNames>id</ColNames>
+    </index>
+    <foreign-key id="32" parent="17" name="paymentandposition_ibfk_1">
+      <ColNames>id</ColNames>
+      <RefSchemaName>myjoinsdb</RefSchemaName>
+      <RefTableName>nameandphone</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
